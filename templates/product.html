@@ -1,10 +1,31 @@
-{% extends 'base.html' %}
-{% block title %}{{ product.name }} - My Store{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{% static 'productPage.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <canvas id="particle-canvas"></canvas>
+    
+</head>
+<body>
 
-{% block content %}
-    <h1>{{ product.name }}</h1>
-    <img src="{{ ../static/Products/P1.jpg }}" alt="{{ product.name }}">
-    <p>Price: ${{ product.price }}</p>
-    <p>{{ product.description }}</p>
-    <a href="{% url 'home' %}">Back to Home</a>
-{% endblock %}
+    <div class="product-container">
+        <div class="product-image">
+            <img src="../static/Products/P1.jpg" alt="" class="card_image">
+        </div>
+        <div class="product-info">
+            <h1 class="product-title">Roller Scates</h1>
+            <p class="product-description">{{ product.description }}</p>
+            <div class="price">₹2999</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/product.js' %}"></script>
+    <script src="{% static 'js/particle.js' %}"></script>
+    
+</body>
+</html>
