@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}{{ product.name }} - My Store{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    <img src="{{ ../static/Products/P1.jpg }}" alt="{{ product.name }}">
+    <p>Price: ${{ product.price }}</p>
+    <p>{{ product.description }}</p>
+    <a href="{% url 'home' %}">Back to Home</a>
+{% endblock %}
